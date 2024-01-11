@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.container {
+  width: 548px;
+  margin: 0 auto;
+  background-color: #FFF7ED;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 112px;
+  padding: 1.5em;
+}
+
+.navbar__title {
+  font-size: 1.6em;
+  font-weight: 900;
+}
+
+.navbar__links {
+  display: flex;
+  font-size: 1em;
+  justify-content: space-between;
+  font-weight: 600;
+  width: 120px;
+}
+
+.navbar__router__link {
+  color: #4D4D4D;
+}
+
+.navbar__router__link:hover {
+  text-decoration: underline;
+  opacity: 50%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  background-color: #252525;
+  color: #AAAAAA
+}
+
+.home__container {
+  background-image: url("./images/home-hero.png");
+  background-size: contain;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 387px;
+  padding: 0 1.5em;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.home__container h1 {
+  font-weight: 800;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home__container a {
+  display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #FF8C38;
+    border: none;
+    width: 100%;
+    margin-top: 27px;
+    padding-block: .75rem;
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .1s ease-in-out;
+}
+
+.about-hero__image {
+  width: 100%;
+}
+
+.about-page__content,
+.about-page__cta {
+  padding: 1.5rem;
+}
+
+.about-page__cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 1.5rem;
+  border-radius: 5px;
+  background-color: #FFCC8D;
+}
+
+.link__button {
+  border-radius: 10px;
+  background-color: #161616;
+  padding: 12px 22px;
+  color: white;
+  font-weight: 700;
 }
