@@ -119,3 +119,154 @@ a:visited {
   color: white;
   font-weight: 700;
 }
+
+.vans__container {
+  padding: 0 26px;
+}
+
+.vans__container h1 {
+  font-size: 2em;
+  font-weight: 800;
+}
+
+.vans-type-filter__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vans__data__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.van__container {
+  width: 230px;
+  margin-bottom: 1.5rem;
+}
+
+.van-image__container {
+  width: 300px;
+}
+
+.van-description__container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: .5rem;
+}
+
+.van-description__container--left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0;
+}
+
+.van-description__container--right {
+  text-align: right;
+}
+
+.van-name {
+  color: #161616;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.van-price__header--top {
+  margin: 0;
+}
+
+.van-price__header--bottom {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.van-tag__container--simple,
+.van-tag__container--rugged,
+.van-tag__container--luxury {
+  width: 85px;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: #FFEAD0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: default;
+  user-select: none;
+}
+
+.van-tag__container--simple {
+  background-color: #E17654;
+}
+
+.van-tag__container--rugged {
+  background-color: #115E59;
+}
+
+.van-tag__container--luxury {
+  background-color: #161616;
+}
+
+.image {
+  width: 230px;
+  height: 230px;
+}
+
+/* BUTTONS */
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 26px 7px 26px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.text__btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.text__btn:hover {
+  text-decoration: underline;
+}
+
+.btn:hover {
+  opacity: 70%;
+}
+
+
+/* Button types */
+
+.filter__btn {
+  color: red;
+}
+
+/* Button sizes */
+
+.medium {
+  width: 104px;
+  height: 37px;
+}
+
+.large {
+  width: 104px;
+  height: 37px;
+}
+
+/* Button types */
+.filter__btn {
+  background-color: #FFEAD0;
+  color: #4D4D4D;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+
