@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import Van from './Van';
-import Button from './Button/Button';
+import VaTile from './VanTile';
+import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
+import VanTile from './VanTile';
+
 
 export default function Vans() {
 
@@ -20,9 +23,9 @@ export default function Vans() {
 
   const vansArr = vanData.length > 0 ? vanData.map(van => {
     return (
-      <Van key={`van${van.id}`}>
-        {van}
-      </Van>)
+      <VanTile key={`van${van.id}`}>
+          {van}
+      </VanTile>)
   }) 
   :<div>There is no data</div>
 

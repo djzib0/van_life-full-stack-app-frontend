@@ -1,19 +1,24 @@
 import React from 'react';
-import firstLetterToUpperCase from '../utils/firstLetterToUpperCase';
+import firstLetterToUpperCase from '../../utils/firstLetterToUpperCase';
+import { Link } from 'react-router-dom';
 
 
-export default function Van({children}) {
-  const {name, imageUrl, type, price} = children
+export default function VanTile({children}) {
+  const {id, name, imageUrl, type, price} = children
 
 
   return (
-    <div className='van__container'>
+    <Link to={`../vans/${id}`} 
+      className='van__container'
+      aria-label={`View detailf for ${name}, prices at $${price}
+      per day`}
+      >
       <div className='van-image__container'>
-        <img src={imageUrl} alt='van' className="image"/>
+        <img src={imageUrl} alt={`image of ${name} van`} className="image"/>
       </div>
       <div className='van-description__container'>
         <div className='van-description__container--left'>
-          <h3 className='van-name'>{name}</h3>
+          <p className='van-name'>{name}</p>
           <div className={`van-tag__container--${type}`}>
             {firstLetterToUpperCase(type)}
           </div>
@@ -23,6 +28,6 @@ export default function Van({children}) {
           <h5 className='van-price__header--bottom'>/day</h5>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
