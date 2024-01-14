@@ -9,7 +9,7 @@ export default function Navbar() {
         </div>
         <div className='navbar__links'>
           <NavLink 
-            className={(isActive) => isActive ? 'navbar__router__link--active' : 'navbar__router__link'}
+            className={({isActive}) => isActive ? 'navbar__router__link--active' : 'navbar__router__link'}
             to="/host">Host</NavLink>
           <NavLink 
           className={({isActive}) => isActive ? 'navbar__router__link--active' : 'navbar__router__link'} 
