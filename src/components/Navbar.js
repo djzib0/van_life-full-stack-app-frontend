@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { UserContext } from '../App'
 
 export default function Navbar() {
+
+  const {loggedUserData} = useContext(UserContext);
+  const name = loggedUserData && loggedUserData.firstName; 
+  
   return (
     <nav className='navbar'>
         <div className='navbar__title'>
@@ -10,7 +15,7 @@ export default function Navbar() {
         <div className='navbar__links'>
           <NavLink 
             className={({isActive}) => isActive ? 'navbar__router__link--active' : 'navbar__router__link'}
-            to="/host">Host</NavLink>
+            to="/host">{loggedUserData ? `Hi ${name}` : "Host"}</NavLink>
           <NavLink 
           className={({isActive}) => isActive ? 'navbar__router__link--active' : 'navbar__router__link'} 
           to="/about">About</NavLink>
