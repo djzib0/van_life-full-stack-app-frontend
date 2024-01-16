@@ -8,6 +8,6 @@ export default function HostVan() {
   console.log(params)
 
   return (
-    <div>HostVan {params.id}</div>
+    <div>HostVanDetail {params.id}</div>
   )
 }

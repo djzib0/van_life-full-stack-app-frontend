@@ -12,6 +12,7 @@ a,
 a:active,
 a:visited {
   text-decoration: none;
+  color: #4D4D4D;
 }
 
 
@@ -55,7 +56,7 @@ a:visited {
 }
 
 .navbar__router__link--active {
-  color: red;
+  text-decoration: underline;
 }
 
 .footer {
@@ -151,6 +152,11 @@ a:visited {
   margin-bottom: 1.5rem;
 }
 
+.van__container-host {
+  display: flex;
+  align-items: center;
+}
+
 .van-image__container {
   width: 300px;
 }
@@ -159,6 +165,13 @@ a:visited {
   display: flex;
   justify-content: space-between;
   margin-top: .5rem;
+}
+
+.van-description__container-host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 1rem;
 }
 
 .van-description__container--left {
@@ -172,15 +185,35 @@ a:visited {
   text-align: right;
 }
 
-.van-name {
+.van-description__container--right-host {
+  display: flex;
+  flex-direction: row;
+}
+
+.van-description__container--right-host  > h5 {
+  font-size: 1.125rem;
+}
+
+.van-name,
+.van-name-host {
   color: #161616;
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0;
 }
 
+.van-name-host {
+  font-size: 1.;
+}
+
 .van-price__header--top {
   margin: 0;
+}
+
+.van-price__header--top-host {
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .van-price__header--bottom {
@@ -203,6 +236,12 @@ a:visited {
   font-weight: 600;
   cursor: default;
   user-select: none;
+}
+
+.van-tag__container--simple-host,
+.van-tag__container--rugged-host,
+.van-tag__container--luxury-host {
+  display: none;
 }
 
 .van-tag__container--simple {
@@ -248,6 +287,38 @@ a:visited {
 .btn:hover {
   opacity: 70%;
 }
+
+.host-nav__container {
+  display: flex;
+  padding: 1.5rem;
+}
+
+.host-nav__container > a {
+  margin-right: 1.5rem;
+  color: #4D4D4D;
+}
+
+.host-vans__container {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.host-van__container {
+  background-color: #FFFFFF;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.image-host {
+  width: 66px;
+  height: 66px;
+}
+
 
 
 /* Button types */

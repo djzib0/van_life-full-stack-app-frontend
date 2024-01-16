@@ -24,7 +24,7 @@ export default function App() {
 
   useEffect(() => {
     async function getUserData() {
-    fetch(`../data/hosts/${userId}`)
+    fetch(`http://localhost:3000/data/hosts/${userId}`)
     .then(res => res.json())
     .then(data=> setLoggedUserData(data))
     }

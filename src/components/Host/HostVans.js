@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../../App'
+import VanTile from '../Vans/VanTile'
 
 export default function HostVans() {
 
@@ -8,7 +9,7 @@ export default function HostVans() {
 
   useEffect(() => {
     async function getVanData() {
-      fetch(`../data/vans/host/${loggedUserData.id}`)
+      fetch(`http://localhost:3000/data/vans/host/${loggedUserData.id}`)
       .then(res => res.json())
       .then(data => setUserVansData(data))
     };
@@ -18,11 +19,18 @@ export default function HostVans() {
 
   const vansArr = userVansData.map(van => {
     return (
-      <div key={van.id}>{van.name}</div>
+      <div className='host-van__container'>
+        <VanTile 
+          key={van.id} 
+          variant={"-host"}
+          urlRoute={"/host/vans"}
+        >{van}</VanTile>
+      </div>
+      
     )
   })
 
   return (
-    <div>{vansArr}</div>
+    <div className='host-vans__container'>{vansArr}</div>
   )
 }

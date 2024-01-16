@@ -12,7 +12,7 @@ export default function HostLayout() {
 
   return (
     <div>
-      <nav>
+      <nav className='host-nav__container'>
         <NavLink 
         to='/host'
         end
