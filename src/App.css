@@ -319,6 +319,20 @@ a:visited {
   height: 66px;
 }
 
+.host-van__back-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  padding: 0;
+}
+
+.host-van__back-btn:hover {
+  border-bottom: 1px solid #4D4D4D;
+}
+
 
 
 /* Button types */

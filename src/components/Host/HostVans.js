@@ -17,11 +17,12 @@ export default function HostVans() {
   }, [loggedUserData])
 
 
-  const vansArr = userVansData.map(van => {
+  const vansArr = userVansData.length > 0 && userVansData.map(van => {
     return (
       <div className='host-van__container'>
         <VanTile 
           key={van.id} 
+          vanId={van.id}
           variant={"-host"}
           urlRoute={"/host/vans"}
         >{van}</VanTile>
