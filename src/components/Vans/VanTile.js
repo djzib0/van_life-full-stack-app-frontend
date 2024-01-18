@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 export default function VanTile({children, ...rest}) {
   const {id, name, imageUrl, type, price} = children
-
   // css class variant will be different for a different view
   const variant = rest.variant ? rest.variant : "";
 

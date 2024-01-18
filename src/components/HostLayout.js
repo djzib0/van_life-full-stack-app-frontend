@@ -14,22 +14,22 @@ export default function HostLayout() {
     <div>
       <nav className='host-nav__container'>
         <NavLink 
-        to='/host'
+        to='.'
         end
         style={({isActive}) => isActive ? definedStyle : null}
         >Dashboard</NavLink>
         <NavLink 
-        to='/host/income'
+        to='income'
         end
         style={({isActive}) => isActive ? definedStyle : null}
         >Income</NavLink>
         <NavLink 
-        to='/host/vans'
+        to='vans'
         end
         style={({isActive}) => isActive ? definedStyle : null}
         >Vans</NavLink>
         <NavLink 
-        to='/host/reviews'
+        to='reviews'
         end
         style={({isActive}) => isActive ? definedStyle : null}
         >Reviews</NavLink>

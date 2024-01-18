@@ -18,6 +18,7 @@ export default function HostVans() {
 
 
   const vansArr = userVansData.length > 0 && userVansData.map(van => {
+    console.log(van.price + " type")
     return (
       <div className='host-van__container'>
         <VanTile 
