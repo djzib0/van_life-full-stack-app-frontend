@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, useNavigate, NavLink } from 'react-router-dom'
+import { useParams, useNavigate, NavLink, Outlet, Link } from 'react-router-dom'
 import { IoIosArrowRoundBack } from "react-icons/io";
 import firstLetterToUpperCase from '../../utils/firstLetterToUpperCase';
+
 
 export default function HostVan({...rest}) {
   const params = useParams();
@@ -22,11 +23,12 @@ export default function HostVan({...rest}) {
 
   return (
     vanData && <div className='host-van-detail__container'>
-      <button 
-        onClick={() => navigate(-1)}
+      <Link 
+        to=".."
+        relative='path'
         className='host-van__back-btn'
         ><IoIosArrowRoundBack />&nbsp;Back to all vans
-      </button>
+      </Link>
       <div className='host-van__container'>
         <div className='host-van__container--top'>
           <img src={vanData.imageUrl} alt={`image of ${vanData.name} van`} className={`image${vanData.variant} medium-img`}/>
@@ -44,22 +46,20 @@ export default function HostVan({...rest}) {
         <div className='host-van__container__dashboard'>
           <NavLink 
             className={({isActive}) => isActive ? "navbar__router__link--active": ""}
-            end
-            to=''
+            to='.'
             >Details</NavLink>
           <NavLink 
             className={({isActive}) => isActive ? "navbar__router__link--active": ""}
-            to=''
+            to='pricing'
             >Pricing</NavLink>
           <NavLink 
             className={({isActive}) => isActive ? "navbar__router__link--active": ""}
-            to=''
+            to='photos'
             >Photos</NavLink>
         </div>
-        <p><span className='text__span--bold'>Name:</span> {vanData.name}</p>   
-        <p><span className='text__span--bold'>Category:</span> {firstLetterToUpperCase(vanData.type)}</p>  
-        <p><span className='text__span--bold'>Description:</span> {vanData.description}</p>
-        <p><span className='text__span--bold'>Visibility:</span> Public</p>
+        <div>
+          <Outlet context={[vanData]}/>
+        </div>
       </div>
 
     </div>
