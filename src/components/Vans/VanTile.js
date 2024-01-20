@@ -10,9 +10,9 @@ export default function VanTile({children, ...rest}) {
 
   // url route
   const urlRoute = rest.urlRoute ? rest.urlRoute : "/vans"
-
   return (
-    <Link to={`${urlRoute}/${id}`} 
+    <Link to={`${urlRoute}/${id}`}
+      state={{search: rest.searchFilter}}
       className={`van__container${variant}`}
       aria-label={`View details for ${name}, prices at $${price}
       per day`}

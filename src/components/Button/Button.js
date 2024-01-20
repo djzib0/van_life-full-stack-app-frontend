@@ -10,6 +10,8 @@ export default function Button({children, ...rest}) {
   );
   
   return (
-    <button className={`btn ${fullClassName}`}>{children}</button>
+    <button 
+      className={`btn ${fullClassName} ${rest.isActive}`} 
+      onClick={rest.func}>{children}</button>
   )
 }

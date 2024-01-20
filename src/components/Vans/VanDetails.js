@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useLocation } from 'react-router-dom'
 
 export default function VanDetails() {
 
   const params = useParams()
+  const location = useLocation();
 
   const [vanDetails, setVanDetails] = useState([])
 
