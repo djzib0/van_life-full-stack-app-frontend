@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, useLocation } from 'react-router-dom'
+import { useParams, useLocation, Link } from 'react-router-dom'
 
 export default function VanDetails() {
 
@@ -17,7 +17,20 @@ export default function VanDetails() {
     getVanData()
   }, [])
 
+  const search = location.state?.search || ""
+  console.log(location.state.search.split("type="), " i'm here")
+  const type = location.state?.type || "all"
+
   return (
-    <div>Van - {vanDetails.name} details</div>
+    <div>
+      <Link
+        to={`..${search}`}
+        relative="path"
+        className="back-button"
+      >&larr; <span>Back to {type} vans</span></Link>
+      <div>
+        Van - {vanDetails.name} details
+      </div>
+      </div>
   )
 }

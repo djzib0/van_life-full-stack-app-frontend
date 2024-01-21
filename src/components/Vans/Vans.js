@@ -32,14 +32,14 @@ export default function Vans() {
 
   const vansArr = vansData.length > 0 ? filteredVansData.map(van => {
     return (
-      <VanTile key={`van${van.id}`} searchFilter={searchParams.toString()}>
+      <VanTile key={`van${van.id}`} searchFilter={searchParams.toString()} typeFilter={typeFilter}>
           {van}
       </VanTile>)
   }) 
   :<div>There is no data</div>
 
   function checkIsSelected(typeName) {
-    return typeName === typeFilter ? "active-filter" : null
+    return typeName === typeFilter ? "active-filter" : ""
   }
 
   function handleFilterChange(key, value) {
@@ -61,27 +61,28 @@ export default function Vans() {
           type="filter__btn"
           size="large"
           func={() => setSearchParams({type: "simple"})}
-          isActive={checkIsSelected("simple")}
-          // isActive={typeFilter === "simple" ? "active-filter" : null}
+          // isActive={checkIsSelected("simple")}
+          isActive={typeFilter === "simple" ? "active-filter" : ""}
         >Simple</Button>
         <Button 
           type="filter__btn"
           size="large"
           func={() => setSearchParams({type: "luxury"})}
-          isActive={checkIsSelected("luxury")}
-          // isActive={typeFilter === "luxury" ? "active-filter" : null}
+          // isActive={checkIsSelected("luxury")}
+          isActive={typeFilter === "luxury" ? "active-filter" : ""}
         >Luxury</Button>
         <Button 
           type="filter__btn"
           size="large"
           func={() => setSearchParams({type: "rugged"})}
-          isActive={checkIsSelected("rugged")}
-          // isActive={typeFilter === "rugged" ? "active-filter" : null}
+          // isActive={checkIsSelected("rugged")}
+          isActive={typeFilter === "rugged" ? "active-filter" : ""}
         >Rugged</Button>
       </div>
       {typeFilter && <button 
           onClick={() => setSearchParams({})}
-          className='text__btn'>Clear filters</button>}
+          className='text__btn'
+          >Clear filters</button>}
       <div className='vans__data__container'>{vansArr}</div>
     </div>
     

@@ -15,6 +15,7 @@ import HostVanPricing from './components/Host/HostVanPricing';
 import HostVanPhotos from './components/Host/HostVanPhotos';
 import Reviews from './components/Host/Reviews';
 import HostLayout from './components/HostLayout';
+import NotFound from './components/NotFound';
 import { createContext, useEffect, useState } from 'react';
 
 const UserContext = createContext()
@@ -38,7 +39,7 @@ export default function App() {
     <UserContext.Provider value={{loggedUserData}}>
       <div className='container'>
         <Routes>
-          <Route element={<Layout />}>
+          <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path='about' element={<About />} />
             <Route path='vans' element={<Vans />} />
@@ -54,6 +55,7 @@ export default function App() {
               </Route>
               <Route path='reviews' element={<Reviews />} />
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </div>
