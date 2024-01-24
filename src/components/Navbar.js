@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { UserContext } from '../App'
+import { IoPersonCircleOutline } from "react-icons/io5";
+
 
 export default function Navbar() {
 
@@ -23,6 +25,9 @@ export default function Navbar() {
           className={({isActive}) => isActive ? 'navbar__router__link--active' : 'navbar__router__link'}
           to="/vans">Vans</NavLink>
         </div>
+        <Link to="login" className="login-link">
+          <IoPersonCircleOutline />
+        </Link>
     </nav>
   )
 }
